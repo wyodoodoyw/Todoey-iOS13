@@ -16,7 +16,7 @@ class ToDoListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //loadItems()
+        loadItems()
     }
     
     // MARK: - TableView DataSource Methods
@@ -46,6 +46,11 @@ class ToDoListViewController: UITableViewController {
         //add checkmark to cell when selected
         
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+        
+        //context.delete(itemArray[indexPath.row])
+        //itemArray.remove(at: indexPath.row)
+        
+        
         saveItems()
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -89,15 +94,34 @@ class ToDoListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-//    func loadItems() {
-//        if let data = try? Data(contentsOf: dataFilePath!) {
-//            let decoder = PropertyListDecoder()
-//            do {
-//                itemArray = try decoder.decode([Item].self, from: data)
-//            } catch {
-//                print("Error dencoding item array, \(error)")
-//            }
-//        }
-//
-//    }
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
+        // = Item.fetchRequest() is a default value, so we don't need a parameter in viewDidLoad
+        // let request: NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            itemArray = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+        
+    }
+}
+
+    // MARK: - Search Bar Methods
+
+extension ToDoListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request: NSFetchRequest<Item> = Item.fetchRequest()
+        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        loadItems(with: request)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems()
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        }
+    }
 }
