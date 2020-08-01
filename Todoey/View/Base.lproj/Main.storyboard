@@ -29,7 +29,14 @@
                             <outlet property="delegate" destination="iUT-EO-FMd" id="JKH-CQ-Diw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Honey Do List" id="s5M-NB-B1C"/>
+                    <navigationItem key="navigationItem" title="Honey Do List" id="s5M-NB-B1C">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="I5s-UQ-h62">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="iUT-EO-FMd" id="P2K-cn-lJd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyR-A7-9g4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
