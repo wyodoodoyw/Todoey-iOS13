@@ -75,7 +75,7 @@
         <!--Category View Controller-->
         <scene sceneID="bdL-1X-XHj">
             <objects>
-                <tableViewController id="u07-x0-LIQ" customClass="CategoryViewController" sceneMemberID="viewController">
+                <tableViewController id="u07-x0-LIQ" customClass="CategoryViewController" customModule="Todoey" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RIB-ve-aCH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="iUT-EO-FMd" kind="show" identifier="goToItema" id="4cc-hY-IZG"/>
+                        <segue destination="iUT-EO-FMd" kind="show" identifier="goToItems" id="4cc-hY-IZG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAR-Tj-3PA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
