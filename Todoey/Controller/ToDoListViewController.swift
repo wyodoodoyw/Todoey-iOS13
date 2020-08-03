@@ -101,12 +101,15 @@ class ToDoListViewController: UITableViewController {
     }
     
     func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
-        // = Item.fetchRequest() is a default value, so we don't need a parameter in viewDidLoad
-        // let request: NSFetchRequest<Item> = Item.fetchRequest()
+        
         let categoryPredicate = NSPredicate(format: "parentCategory.name MATCHES %@", selectedCategory!.name!)
+        
+        // check if predicate is passed a value (ie it is not nil)
         if let additionalPredicate = predicate {
+            // make request with category predicate and additional (search) predicate
             request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
         } else {
+            // make request with category predicate only
             request.predicate = categoryPredicate
         }
         
@@ -115,7 +118,7 @@ class ToDoListViewController: UITableViewController {
         } catch {
             print("Error fetching data from context \(error)")
         }
-        
+        tableView.reloadData()
     }
 }
 
