@@ -20,7 +20,6 @@
 			<integer>2</integer>
 		</dict>
 <<<<<<< HEAD
-<<<<<<< HEAD
 		<key>RealmSwift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -31,8 +30,6 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-=======
->>>>>>> parent of 1c2c380... create SwipeTableVC super class
 =======
 >>>>>>> parent of 1c2c380... create SwipeTableVC super class
 	</dict>
