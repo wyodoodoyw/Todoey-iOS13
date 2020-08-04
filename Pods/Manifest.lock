@@ -24,7 +24,11 @@ SPEC CHECKSUMS:
   RealmSwift: 0a709536ecea30eea1d3c514f6ade2ed078dee3c
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 PODFILE CHECKSUM: eea87fb755b6d80bef99e1b891b2a7378b7c0225
+=======
+PODFILE CHECKSUM: cf1b2fb81f403b2b9c1547d38091d2138b508013
+>>>>>>> parent of 1c2c380... create SwipeTableVC super class
 =======
 PODFILE CHECKSUM: cf1b2fb81f403b2b9c1547d38091d2138b508013
 >>>>>>> parent of 1c2c380... create SwipeTableVC super class

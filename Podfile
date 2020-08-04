@@ -6,9 +6,12 @@ target 'Todoey' do
   # Pods for Todoey
 pod 'RealmSwift'
 <<<<<<< HEAD
+<<<<<<< HEAD
 pod 'SwipeCellKit'
 
-pod 'ChameleonFramework/Swift'
+=======
+
+>>>>>>> parent of 1c2c380... create SwipeTableVC super class
 =======
 
 >>>>>>> parent of 1c2c380... create SwipeTableVC super class
